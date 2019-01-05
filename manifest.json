@@ -2,5 +2,16 @@
   "name": "Abema TV Extension",
   "version": "1.0",
   "description": "Abema TV Extension",
+  "permissions": [
+    "activeTab",
+    "https://api.abema.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://abema.tv/now-on-air/*"],
+      "run_at": "document_idle",
+      "js": ["on-air.js"]
+    }
+  ],
   "manifest_version": 2
 }
