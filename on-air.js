@@ -101,12 +101,14 @@ async function updateStats() {
   let v1 = viewCountHistory[0];
   let v2 = v1;
   for (const v of viewCountHistory) {
-    if (v2 !== v) {v2 = v; break}
+    if (v === 0) continue;
+    if (v2 > v) {v2 = v; break}
   }
   let c1 = commentCountHistory[0];
   let c2 = c1;
   for (const c of commentCountHistory) {
-    if (c2 !== c) {c2 = c; break}
+    if (c === 0) continue;
+    if (c2 > c) {c2 = c; break}
   }
   const diffViewCount = v1 - v2;
   const diffCommentCount = c1 - c2;
@@ -115,8 +117,8 @@ async function updateStats() {
   const viewCountStr = viewCount > 1000 ? ((viewCount / 1000).toFixed(1) + 'K') : viewCount;
   const commentCountStr = commentCount > 1000 ? ((commentCount / 1000).toFixed(1) + 'K') : commentCount;
 
-  twitterWrapper.innerHTML = `視聴数: ${viewCountStr} (+${diffViewCount})`
-    + `<br>コメント数: ${commentCountStr} (+${diffCommentCount})`;
+  twitterWrapper.innerHTML = `視聴数 ${viewCountStr} (+${diffViewCount})`
+    + `<br>ｺﾒﾝﾄ数 ${commentCountStr} (+${diffCommentCount})`;
 }
 setInterval(updateCurrentSlot, 10000);
 setInterval(updateStats, 5000);
