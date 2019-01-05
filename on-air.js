@@ -14,11 +14,11 @@ function changeStyles(selector, props) {
 
 // コメントのスタイルを変更
 changeStyles('.pJ_i', {
-  padding: '0 0 0 5px',
-  'border-top': '1px solid #888',
+  padding: '2px 0 2px 5px',
+  'border-bottom': '1px solid #444',
 });
 changeStyles('.fR_i', {
-  'font-size': '14px',
+  'font-size': '13px',
 });
 
 // 番組一覧を取得
