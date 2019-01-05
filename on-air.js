@@ -89,6 +89,8 @@ async function updateStats() {
 
   const viewCount = slot.stats.view;
   const commentCount = slot.stats.comment;
+  if (viewCount == null) return;
+  if (commentCount == null) return;
 
   // 視聴数、コメント数の増分を計算
   // 視聴数、コメント数は一定時間ごとに加算されるため変わらない場合がある
