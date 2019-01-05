@@ -1,7 +1,7 @@
 {
-  "name": "Abema TV Extension",
+  "name": "Ematv Extension",
   "version": "1.0",
-  "description": "Abema TV Extension",
+  "description": "Extension for https://abema.tv/",
   "permissions": [
     "activeTab",
     "https://api.abema.io/*"
