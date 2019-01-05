@@ -1,2 +1,2 @@
-# abema-tv-extension
+# Ematv Extension
 Google Chrome Extension for abema.tv
