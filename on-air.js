@@ -110,14 +110,14 @@ async function updateStats() {
   const diffCommentCount = c1 - c2;
 
   // K単位で表示
-  const viewCountStr = viewCount > 1000 ? (Math.round(viewCount / 100) / 10 + 'K') : viewCount;
-  const commentCountStr = commentCount > 1000 ? (Math.round(commentCount / 100) / 10 + 'K') : commentCount;
+  const viewCountStr = viewCount > 1000 ? ((viewCount / 1000).toFixed(1) + 'K') : viewCount;
+  const commentCountStr = commentCount > 1000 ? ((commentCount / 1000).toFixed(1) + 'K') : commentCount;
 
   twitterWrapper.innerHTML = `視聴数: ${viewCountStr} (+${diffViewCount})`
     + `<br>コメント数: ${commentCountStr} (+${diffCommentCount})`;
 }
 setInterval(updateCurrentSlot, 10000);
-setInterval(updateStats, 3000);
+setInterval(updateStats, 5000);
 setTimeout(updateCurrentSlot, 0);  // 初回
 setTimeout(updateStats, 1000);  // 初回
 changeStyles('.com-o-CommentForm__twitter-wrapper', {
