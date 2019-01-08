@@ -16,7 +16,7 @@ const observer = new MutationObserver(function(/*mutationsList*/) {
     initNowOnAir(channelId);
     break;
   case 'timetable':
-    initTimetable(channelId);
+    initTimetable();
     break;
   }
 });
