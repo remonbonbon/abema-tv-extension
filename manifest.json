@@ -12,7 +12,8 @@
       "run_at": "document_idle",
       "js": [
         "main.js",
-        "on-air.js"
+        "now-on-air.js",
+        "timetable.js"
       ]
     }
   ],
