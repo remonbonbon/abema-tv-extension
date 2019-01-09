@@ -1,6 +1,6 @@
 {
   "name": "Ematv Extension",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Extension for https://abema.tv/",
   "permissions": [
     "activeTab",
