@@ -7,15 +7,24 @@ function initTimetable() {
 
   // CSSを変更
   function changeStyles(selector, props) {
+    let matched = false;
     for (const styleSheet of document.styleSheets) {
       const styles = styleSheet.cssRules || styleSheet.rules;
       for (const style of styles) {
         if (style.selectorText === selector) {
+          console.log('Update CSS rule', selector, props);
           for (const prop of Object.keys(props)) {
             style.style[prop] = props[prop];
           }
+          matched = true;
         }
       }
+    }
+    if (!matched) {
+      const styleSheet = document.styleSheets[0];
+      const rule = `${selector} ${JSON.stringify(props).replace(/"/g, '')}`;
+      console.log('Insert new CSS rule', rule);
+      styleSheet.insertRule(rule);
     }
   }
 
